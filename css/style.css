@@ -6,7 +6,8 @@
 }
 
 body {
-    background-color: #000 !important;
+    background-color: #252525 !important;
+    color: #fff;
 }
 
 img {
@@ -38,7 +39,7 @@ small {
     margin: 0;
     padding: 0;
     text-decoration: none;
-    color: #002B3F;
+    color: #fff;
 }
 
 ul,
@@ -535,12 +536,26 @@ a.view-btn {
     grid-gap: 30px;
 }
 
+
+.blog-row .blog-card {
+    border: 0;
+    overflow: hidden;
+}
+
+.card-img-top-custom {
+    height: 200px;
+    object-fit: cover;
+    min-width: 350px;
+    width: 450px;
+}
+
 .blog-row .blog-card .card-img-top {
     height: 200px;
     object-fit: cover;
+    min-width: 350px;
 }
 
-.blog-row .blog-card .button-wrap button {
+.blog-row .blog-card .button-wrap a {
     padding: 10px 15px;
     background-color: #0e2432;
     border: 1px solid #0e2432;
@@ -551,21 +566,22 @@ a.view-btn {
     color: #fff;
     border-radius: 0.375rem;
     transition: all 0.5s ease;
+    text-decoration: none;
 }
 
-.blog-row .blog-card .button-wrap button i {
+.blog-row .blog-card .button-wrap a i {
     font-size: 25px;
     line-height: 1;
     margin-left: 10px;
 }
 
-.blog-row .blog-card .button-wrap button:hover {
+.blog-row .blog-card .button-wrap a:hover {
     background-color: transparent;
     border: 1px solid #0e2432;
     color: #0e2432;
 }
 
-.blog-row .blog-card .button-wrap button:hover i {
+.blog-row .blog-card .button-wrap a:hover i {
     color: #0e2432;
 }
 
@@ -573,11 +589,13 @@ a.view-btn {
     margin-top: 10px;
 }
 
-.action-button-wrap button {
+.action-button-wrap a {
     border: 0;
     color: #fff;
     padding: 10px;
     border-radius: 0.3578rem;
+    text-decoration: none;
+
 }
 
 /* load more button */
@@ -621,7 +639,7 @@ a.view-btn {
     margin-bottom: 40px;
 }
 
-.add_blog .form-group:not(.note-form-group) > label {
+.add_blog .form-group:not(.note-form-group)>label {
     color: #fff;
 }
 
@@ -650,4 +668,187 @@ a.view-btn {
 button.close {
     background-color: transparent;
     border: 0;
+}
+
+
+
+/* calendar page */
+
+.dash-toggle-button a:hover {
+    color: #fff;
+}
+html body .offcanvas-body ul.dropdown-menu.show li a{
+    position: relative;
+}
+html body .offcanvas-body ul.dropdown-menu.show li a:before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 35px;
+    background-color: #9acd32;
+    left: 22px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.main-calendar-section {
+    display: inline-block;
+    width: 100%;
+}
+.calendar {
+    max-width: 100%;
+    max-height: auto;
+    margin: 0 auto;
+    border: 1px solid #fff;
+}
+button#prevBtn, button#nextBtn {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: none;
+    outline: 0;
+    border-radius: 50%;
+}  
+button#prevBtn img {
+    transform: rotate(90deg);
+}
+button#nextBtn img {
+    transform: rotate(270deg);
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 0px;
+    background-color: #fff;
+}
+.day {
+    padding: 15px;
+    font-weight: bold;
+}
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 100px 100px 100px 100px 100px 100px;
+}
+.date {
+    padding: 15px;
+    cursor: pointer;
+    color: #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+.date:hover {
+    background-color: #333333;
+}
+.current-month {
+    font-weight: bold;
+} 
+.event {
+    background-color: #fff;
+    color: black;
+    padding: 20px 5px 60px 5px;
+    border-radius: 3px;
+    font-size: 22px;
+    cursor: pointer;
+    align-content: center;
+} 
+.has-event::after {
+    content: '\2022';
+    color: #FF5733;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.close-button:hover {
+    background-color: darkgray;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+.hidden {
+    display: none;
+}
+
+h2#eventDate {
+    color: #0e0e0e;
+    text-align: center;
+    font-size: 25px;
+    line-height: 35px;
+    padding: 0;
+    margin: 0;
+}
+span.close {
+    text-align: right;
+    font-size: 35px;
+}
+.area {
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: 0;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+button#saveEventBtn {
+    border: 1px solid #000;
+    background-color: #0e0e0e;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    outline: 0;
+}
+button#saveEventBtn:hover {
+    border: 1px solid #000;
+    background-color: transparent;
+    transition: 0.5s ease;
+    color: #000;
 }
