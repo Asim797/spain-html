@@ -535,6 +535,11 @@ a.view-btn {
     grid-gap: 30px;
 }
 
+.blog-row .blog-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
 .blog-row .blog-card .button-wrap button {
     padding: 10px 15px;
     background-color: #0e2432;
@@ -606,4 +611,43 @@ a.view-btn {
     border: 0;
     padding: 10px 15px;
     border-radius: 0.375rem;
+}
+
+
+/* add blog */
+
+.add_blog {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.add_blog .form-group:not(.note-form-group) > label {
+    color: #fff;
+}
+
+.add_blog input.form-control:focus {
+    background-color: #fff;
+}
+
+.add_blog input[type="file"] {
+    display: block;
+    color: #fff;
+}
+
+.note-editor {
+    background-color: #fff;
+}
+
+
+/* misc */
+
+.btn-primary {
+    background-color: #0e2432 !important;
+    border-color: #0e2432 !important;
+}
+
+
+button.close {
+    background-color: transparent;
+    border: 0;
 }
